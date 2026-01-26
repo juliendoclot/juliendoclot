@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<Layout title={`À propos | ${SITE_TITLE}`} description="En savoir plus sur moi et ce blog.">
+	<div class="py-8">
+		<header class="mb-12 text-center">
+			<h1 class="text-4xl font-bold mb-4">À propos</h1>
+			<p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+				Bienvenue sur mon blog personnel où je partage mes réflexions et mes découvertes.
+			</p>
+		</header>
+
+		<div class="prose max-w-none">
+			<p>
+				Bonjour ! Je suis passionné par le développement web et les nouvelles technologies.
+				Ce blog est un espace où je partage mes apprentissages, mes projets et mes réflexions
+				sur le monde du développement.
+			</p>
+
+			<h2>Ce que vous trouverez ici</h2>
+			<p>
+				Sur ce blog, j'écris principalement sur :
+			</p>
+			<ul>
+				<li>Le développement web moderne (React, Vue, Astro...)</li>
+				<li>Les bonnes pratiques de développement</li>
+				<li>Les outils et technologies que j'utilise au quotidien</li>
+				<li>Mes retours d'expérience sur divers projets</li>
+			</ul>
+
+			<h2>Me contacter</h2>
+			<p>
+				N'hésitez pas à me contacter via les réseaux sociaux en bas de page ou par email.
+				Je suis toujours ouvert aux discussions et aux nouvelles opportunités !
+			</p>
+		</div>
+	</div>
+</Layout>

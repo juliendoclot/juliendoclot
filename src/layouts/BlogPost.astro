@@ -1,0 +1,84 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import Layout from './Layout.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.props;
+---
+
+<Layout title={title} description={description} image={heroImage}>
+	<article class="py-8">
+		<!-- Hero Image -->
+		{heroImage && (
+			<div class="relative mb-8 -mx-4 sm:mx-0 overflow-hidden rounded-none sm:rounded-2xl">
+				<Image
+					src={heroImage}
+					alt={title}
+					width={1200}
+					height={600}
+					class="w-full aspect-video object-cover"
+				/>
+			</div>
+		)}
+
+		<!-- Article Header -->
+		<header class="mb-8 text-center">
+			<!-- Date -->
+			<div class="flex items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-4">
+				<FormattedDate date={pubDate} />
+				{updatedDate && (
+					<>
+						<span>•</span>
+						<span class="italic">
+							Mis à jour le <FormattedDate date={updatedDate} />
+						</span>
+					</>
+				)}
+			</div>
+
+			<!-- Title -->
+			<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+				{title}
+			</h1>
+
+			<!-- Description -->
+			<p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-6">
+				{description}
+			</p>
+
+			<!-- Tags -->
+			{tags && tags.length > 0 && (
+				<div class="flex flex-wrap justify-center gap-2">
+					{tags.map((tag) => (
+						<span class="px-3 py-1 text-sm font-medium rounded-full bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300">
+							{tag}
+						</span>
+					))}
+				</div>
+			)}
+		</header>
+
+		<hr class="border-gray-200 dark:border-gray-800 mb-8" />
+
+		<!-- Article Content -->
+		<div class="prose max-w-none">
+			<slot />
+		</div>
+
+		<!-- Back to Blog -->
+		<div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
+			<a
+				href="/blog"
+				class="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:underline font-medium"
+			>
+				<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12" />
+				</svg>
+				Retour au blog
+			</a>
+		</div>
+	</article>
+</Layout>

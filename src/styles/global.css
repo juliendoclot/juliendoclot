@@ -1,0 +1,263 @@
+@import "tailwindcss";
+
+/* Enable class-based dark mode for Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Custom fonts */
+@font-face {
+	font-family: "Atkinson";
+	src: url("/fonts/atkinson-regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Atkinson";
+	src: url("/fonts/atkinson-bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* Tailwind v4 theme customization */
+@theme {
+	--font-family-sans: "Atkinson", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Base styles */
+@layer base {
+	html {
+		@apply scroll-smooth;
+	}
+
+	body {
+		@apply font-sans antialiased;
+		@apply bg-gray-50 text-gray-900;
+		@apply dark:bg-[#0a0a1a] dark:text-gray-100;
+		transition: background-color 0.3s ease;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		@apply font-bold tracking-tight;
+		@apply text-gray-900 dark:text-white;
+	}
+
+	h1 { @apply text-4xl md:text-5xl lg:text-6xl; }
+	h2 { @apply text-3xl md:text-4xl; }
+	h3 { @apply text-2xl md:text-3xl; }
+	h4 { @apply text-xl md:text-2xl; }
+	h5 { @apply text-lg md:text-xl; }
+	h6 { @apply text-base md:text-lg; }
+
+	a {
+		@apply text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300;
+		@apply transition-colors duration-200;
+	}
+
+	img {
+		@apply max-w-full h-auto;
+	}
+
+	code {
+		@apply px-1.5 py-0.5 rounded text-sm;
+		@apply bg-gray-100 dark:bg-gray-800;
+		@apply text-gray-800 dark:text-gray-200;
+	}
+
+	pre {
+		@apply p-4 rounded-xl overflow-x-auto;
+		@apply bg-gray-900 dark:bg-[#0f0f23];
+		@apply border border-gray-200 dark:border-gray-800;
+	}
+
+	pre > code {
+		@apply bg-transparent p-0 text-gray-100;
+	}
+
+	blockquote {
+		@apply border-l-4 border-indigo-500 pl-4 italic;
+		@apply text-gray-600 dark:text-gray-400;
+	}
+}
+
+/* Prose styles for article content */
+@layer components {
+	.prose {
+		@apply text-gray-700 dark:text-gray-300 leading-relaxed;
+	}
+
+	.prose p {
+		@apply mb-6;
+	}
+
+	.prose h2 {
+		@apply mt-12 mb-4;
+	}
+
+	.prose h3 {
+		@apply mt-8 mb-3;
+	}
+
+	.prose ul, .prose ol {
+		@apply pl-6 mb-6 space-y-2;
+	}
+
+	.prose ul {
+		@apply list-disc;
+	}
+
+	.prose ol {
+		@apply list-decimal;
+	}
+
+	.prose img {
+		@apply rounded-xl shadow-lg my-8;
+	}
+
+	.prose a {
+		@apply underline underline-offset-2;
+	}
+
+	.prose hr {
+		@apply my-8 border-gray-200 dark:border-gray-800;
+	}
+
+	/* ==================== */
+	/* HERO GRADIENT STYLES */
+	/* ==================== */
+
+	/* Dark mode hero */
+	.hero-gradient {
+		background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 40%, #1e1b4b 100%);
+		position: relative;
+		overflow: hidden;
+	}
+
+	/* Light mode hero - same dark style for contrast */
+	:root:not(.dark) .hero-gradient {
+		background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 40%, #1e1b4b 100%);
+	}
+
+	/* Subtle glow */
+	.hero-gradient::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background:
+			radial-gradient(ellipse 80% 50% at 20% 40%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+			radial-gradient(ellipse 60% 40% at 80% 60%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+		pointer-events: none;
+	}
+
+	/* Light beam effect */
+	.hero-gradient::after {
+		content: '';
+		position: absolute;
+		top: -100%;
+		left: 10%;
+		width: 200px;
+		height: 400%;
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(255, 255, 255, 0.03) 20%,
+			rgba(255, 255, 255, 0.08) 50%,
+			rgba(255, 255, 255, 0.03) 80%,
+			transparent 100%
+		);
+		transform: rotate(25deg);
+		pointer-events: none;
+	}
+
+	/* Second light beam */
+	.hero-gradient .light-beam {
+		position: absolute;
+		top: -50%;
+		left: 30%;
+		width: 150px;
+		height: 300%;
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(255, 255, 255, 0.02) 30%,
+			rgba(255, 255, 255, 0.05) 50%,
+			rgba(255, 255, 255, 0.02) 70%,
+			transparent 100%
+		);
+		transform: rotate(25deg);
+		pointer-events: none;
+	}
+
+	/* ================ */
+	/* TAG PILL STYLES  */
+	/* ================ */
+
+	.tag-pill {
+		@apply px-5 py-2.5 text-sm font-medium rounded-full;
+		@apply border border-gray-200 dark:border-gray-700;
+		@apply bg-white dark:bg-transparent;
+		@apply text-gray-600 dark:text-gray-400;
+		@apply hover:border-indigo-400 hover:text-indigo-600 dark:hover:border-indigo-400 dark:hover:text-indigo-400;
+		@apply transition-all duration-200 cursor-pointer;
+	}
+
+	.tag-pill.active {
+		@apply bg-indigo-600 border-indigo-600 text-white;
+		@apply dark:bg-indigo-600 dark:border-indigo-600 dark:text-white;
+	}
+
+	/* =================== */
+	/* CARD STYLES         */
+	/* =================== */
+
+	/* Dark mode card */
+	.card-dark {
+		@apply relative overflow-hidden rounded-2xl;
+		background: linear-gradient(145deg, #1e1b4b 0%, #0f172a 100%);
+		@apply border border-indigo-900/30;
+		@apply transition-all duration-300;
+	}
+
+	/* Light mode card - same dark style */
+	:root:not(.dark) .card-dark {
+		background: linear-gradient(145deg, #1e1b4b 0%, #0f172a 100%);
+		@apply border-indigo-900/30;
+	}
+
+	.card-dark:hover {
+		@apply border-indigo-500/40;
+		box-shadow: 0 0 60px rgba(99, 102, 241, 0.15);
+		transform: translateY(-2px);
+	}
+
+	:root:not(.dark) .card-dark:hover {
+		box-shadow: 0 10px 40px rgba(30, 27, 75, 0.4);
+	}
+
+	/* Card top border glow */
+	.card-dark::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.3), transparent);
+	}
+}
+
+/* Screen reader only utility */
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}

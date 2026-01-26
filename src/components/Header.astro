@@ -1,0 +1,80 @@
+---
+import { SITE_TITLE } from '../consts';
+import ThemeToggle from './ThemeToggle.astro';
+import logoLight from '../assets/logo.png';
+import logoDark from '../assets/logo-dark.png';
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-4 z-50 mx-4 sm:mx-6 lg:mx-auto lg:max-w-5xl">
+	<nav class="bg-white dark:bg-[#0f0f1a] border border-gray-200 dark:border-gray-800 rounded-full px-4 sm:px-6 shadow-sm transition-colors duration-300">
+		<div class="flex items-center justify-between h-14">
+			<!-- Logo -->
+			<a href="/" class="flex items-center no-underline">
+				<img src={logoLight.src} alt="Julien Doclot" class="h-8 dark:hidden" />
+				<img src={logoDark.src} alt="Julien Doclot" class="h-8 hidden dark:block" />
+			</a>
+
+			<!-- Center Navigation -->
+			<div class="hidden md:flex items-center gap-1">
+				<a
+					href="/"
+					class:list={[
+						"px-4 py-1.5 text-sm font-medium rounded-full transition-colors no-underline",
+						currentPath === "/"
+							? "text-gray-900 dark:text-white"
+							: "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+					]}
+				>
+					Accueil
+				</a>
+
+				<a
+					href="/blog"
+					class:list={[
+						"px-4 py-1.5 text-sm font-medium rounded-full transition-colors no-underline",
+						currentPath.startsWith("/blog")
+							? "text-gray-900 dark:text-white"
+							: "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+					]}
+				>
+					Blog
+				</a>
+
+				<a
+					href="/about"
+					class:list={[
+						"px-4 py-1.5 text-sm font-medium rounded-full transition-colors no-underline",
+						currentPath === "/about"
+							? "text-gray-900 dark:text-white"
+							: "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+					]}
+				>
+					À propos
+				</a>
+			</div>
+
+			<!-- Right side -->
+			<div class="flex items-center gap-2">
+				<!-- Theme Toggle -->
+				<ThemeToggle />
+
+				<!-- Contact Button -->
+				<a
+					href="/about"
+					class="hidden sm:inline-flex px-5 py-1.5 text-sm font-medium rounded-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-indigo-500 hover:text-indigo-600 dark:hover:border-indigo-400 dark:hover:text-indigo-400 transition-all no-underline"
+				>
+					Contact
+				</a>
+
+				<!-- Mobile menu button -->
+				<button class="md:hidden p-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white rounded-full" aria-label="Menu">
+					<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+					</svg>
+				</button>
+			</div>
+		</div>
+	</nav>
+</header>
