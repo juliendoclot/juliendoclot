@@ -22,7 +22,7 @@ const categories = [...new Set(allPosts.flatMap((post) => post.data.tags))];
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
 	<!-- Hero Section - Latest Article -->
-	<a href={`/blog/${latestPost.id}/`} class="block hero-gradient -mx-4 sm:-mx-6 lg:-mx-8 px-6 sm:px-10 lg:px-16 py-16 md:py-24 rounded-3xl mb-16 relative no-underline group overflow-hidden">
+	<a href={`/blog/${latestPost.id}/`} class="block hero-gradient px-6 sm:px-10 lg:px-16 py-16 md:py-24 rounded-3xl mb-16 relative no-underline group overflow-hidden">
 		<!-- Hero Image Background -->
 		{latestPost.data.heroImage && (
 			<Image
