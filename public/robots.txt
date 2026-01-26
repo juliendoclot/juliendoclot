@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://juliendoclot.pages.dev/sitemap-index.xml
