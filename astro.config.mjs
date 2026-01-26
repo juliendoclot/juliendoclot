@@ -2,8 +2,10 @@
 
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
+import node from '@astrojs/node';
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
+import decapCmsOauth from 'astro-decap-cms-oauth';
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,14 +15,20 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap(),
+    decapCmsOauth(),
   ],
 
   vite: {
     plugins: [tailwindcss()],
   },
 
-  // Static output for Koyeb deployment
-  output: 'static',
+  // Server mode avec prerender par défaut pour les pages statiques
+  // Les routes OAuth de Decap seront en SSR
+  output: 'server',
+
+  adapter: node({
+    mode: 'standalone',
+  }),
 
   build: {
     // Generate assets in the assets folder
