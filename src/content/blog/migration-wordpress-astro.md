@@ -1,11 +1,12 @@
 ---
-title: 'Pourquoi j''ai migré mon blog de WordPress à Astro'
-description: 'Après plusieurs années sur WordPress, j''ai décidé de tout refaire avec Astro. Performance, sécurité, simplicité : je vous explique pourquoi.'
-pubDate: 'Jan 26 2025'
-heroImage: '../../assets/astro-article.png'
-tags: ['Tech']
+title: Pourquoi j'ai migré mon blog de WordPress à Astro
+description: "Après plusieurs années sur WordPress, j'ai décidé de tout refaire
+  avec Astro. Performance, sécurité, simplicité : je vous explique pourquoi."
+pubDate: Jan 26 2025
+heroImage: ../../assets/astro-article.png
+tags:
+  - Tech
 ---
-
 Bon, il fallait que j'en parle ! Après plusieurs années sur WordPress, j'ai décidé de tout refaire avec Astro. Et franchement, je ne regrette pas.
 
 ## Le problème avec WordPress
@@ -56,15 +57,6 @@ Avec Astro, mes articles sont de simples fichiers Markdown. Tu sais, ce format q
 
 Tu crées un fichier `.md`, tu écris ton article avec quelques balises de formatage basiques, et c'est tout. C'est exactement comme prendre des notes dans Notion ou Obsidian, sauf que ça devient une page web.
 
-```markdown
-# Mon titre
-
-Mon paragraphe avec du **gras** et de l'*italique*.
-
-- Une liste
-- De points
-```
-
 Voilà, c'est aussi simple que ça. Pas besoin d'éditeur WYSIWYG buggé, pas de Gutenberg qui rame, pas de blocs qui se décalent mystérieusement.
 
 ### Performance maximale
@@ -91,29 +83,25 @@ Et avec Claude à mes côtés, je peux expérimenter sans limite. "Ajoute-moi un
 
 Astro utilise des concepts modernes qui rendent le développement vraiment plaisant. Les composants `.astro` ressemblent à du HTML enrichi, faciles à comprendre même pour quelqu'un qui n'a jamais touché au framework. Tailwind CSS permet de styler rapidement sans quitter le fichier. Le hot reload recharge la page instantanément quand je modifie quelque chose.
 
-Et la communauté est incroyable. La documentation est claire, complète, avec des exemples concrets. Le Discord est actif et bienveillant. Quand j'ai eu un souci avec le routage, j'ai trouvé la réponse en moins de 5 minutes.
-
 ## La migration
 
-Concrètement, la migration s'est faite en un week-end. Bon, un long week-end, je ne vais pas mentir.
+Comme je n'avais pas beaucoup d'articles, j'ai décidé de reprendre le blog à zéro avec ce nouveau cms. J'ai donc commencé à coder avec Claude Code et mes quelques idées de mise en page. Ensuite, j'ai ajouté un Decap pour avoir une interface web pour la gestion des articles.
 
-D'abord, j'ai exporté mes articles WordPress. Il existe des outils pour convertir automatiquement en Markdown, mais honnêtement, j'avais peu d'articles, alors j'ai préféré les reprendre un par un. Ça m'a permis de les relire, de corriger quelques fautes, de reformuler certains passages.
-
-Ensuite, j'ai créé la structure du site avec Astro. J'ai commencé avec leur template de blog, puis j'ai tout personnalisé : le header, le footer, les cards d'articles, la page d'accueil... J'ai passé pas mal de temps sur le design, à ajuster les espacements, les couleurs, la typographie. C'est clairement ce qui m'a pris le plus de temps, mais c'était aussi le plus fun.
-
-Pour l'hébergement, j'ai choisi Koyeb. C'est simple, gratuit pour les petits projets, et le déploiement est automatique à chaque push sur GitHub. Je modifie un fichier, je commit, je push, et 30 secondes plus tard c'est en ligne. Magique.
+La dernière étape consistait à déployer le tout sur Cloudflare Pages via Github.
 
 ## Le résultat
 
 Mon blog est maintenant :
 
-- **Plus rapide** : Les pages se chargent instantanément, score Lighthouse 100/100
-- **Plus simple** : Pour écrire un article, j'ouvre VS Code, je crée un fichier Markdown, je push, et c'est en ligne
-- **Plus sécurisé** : Rien à maintenir, rien à patcher, rien à surveiller
-- **Plus agréable** : Je code, je personnalise, je m'amuse, je ne me bats plus avec des plugins
+* **Plus rapide** : Les pages se chargent instantanément, score Lighthouse 100/100
+* **Plus simple** : Pour écrire un article, j'ouvre VS Code, je crée un fichier Markdown, je push, et c'est en ligne
+* **Plus sécurisé** : Rien à maintenir, rien à patcher, rien à surveiller
+* **Plus agréable** : Je code, je personnalise, je m'amuse, je ne me bats plus avec des plugins
 
 Est-ce que c'est pour tout le monde ? Non. Si tu veux juste écrire sans jamais toucher au code, WordPress reste un excellent choix. Son éditeur visuel et son écosystème de plugins permettent de faire énormément de choses.
 
 Mais si comme moi tu as envie d'apprendre, de bidouiller, de créer quelque chose de vraiment personnel... Fonce. Avec les outils d'IA comme Claude, tu n'as plus besoin d'être développeur pour te lancer. Tu expliques ce que tu veux, tu testes, tu apprends. C'est du vibe coding, et c'est addictif.
 
 Et si tu as des questions sur la migration ou sur Astro en général, n'hésite pas à me contacter. Je serai content d'en discuter.
+
+Code Block 123456
