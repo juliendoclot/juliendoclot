@@ -2,7 +2,7 @@
 title: 'Pourquoi j''ai migré mon blog de WordPress à Astro'
 description: 'Après plusieurs années sur WordPress, j''ai décidé de tout refaire avec Astro. Performance, sécurité, simplicité : je vous explique pourquoi.'
 pubDate: 'Jan 26 2025'
-heroImage: '../../assets/blog-placeholder-1.jpg'
+heroImage: '../../assets/astro-article.png'
 tags: ['Tech']
 ---
 
@@ -46,7 +46,7 @@ Avec WordPress, cette approche était frustrante. Le code est complexe, il y a d
 
 ## Pourquoi Astro ?
 
-J'ai découvert Astro un peu par hasard en scrollant sur Twitter (oui, je refuse de l'appeler X). Quelqu'un partageait son nouveau portfolio fait avec Astro et vantait les performances. Curieux, j'ai été voir la doc.
+J'ai découvert Astro un peu par hasard en scrollant sur X. Quelqu'un partageait son nouveau portfolio fait avec Astro et vantait les performances. Curieux, j'ai été voir la doc.
 
 Et j'ai tout de suite accroché. Astro, c'est un framework qui génère des sites statiques ultra-rapides, pensé pour le contenu. Exactement ce dont j'avais besoin pour un blog.
 
