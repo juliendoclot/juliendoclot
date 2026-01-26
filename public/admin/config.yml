@@ -2,7 +2,7 @@ backend:
   name: github
   repo: juliendoclot/juliendoclot
   branch: main
-  base_url: https://juliendoclot.vercel.app
+  base_url: https://juliendoclot.pages.dev
   auth_endpoint: oauth
 
 # Dossier où les images uploadées seront stockées
