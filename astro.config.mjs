@@ -2,7 +2,7 @@
 
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
-import vercel from '@astrojs/vercel';
+import node from '@astrojs/node';
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import decapCmsOauth from 'astro-decap-cms-oauth';
@@ -26,7 +26,9 @@ export default defineConfig({
   // Les routes OAuth de Decap seront en SSR
   output: 'server',
 
-  adapter: vercel(),
+  adapter: node({
+    mode: 'standalone',
+  }),
 
   build: {
     // Generate assets in the assets folder

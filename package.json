@@ -6,13 +6,17 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "start": "node dist/server/entry.mjs",
     "astro": "astro"
+  },
+  "engines": {
+    "node": ">=20"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.13",
+    "@astrojs/node": "^9.5.2",
     "@astrojs/rss": "^4.0.15",
     "@astrojs/sitemap": "^3.7.0",
-    "@astrojs/vercel": "^9.0.4",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.16.15",
     "astro-decap-cms-oauth": "^0.5.1",
