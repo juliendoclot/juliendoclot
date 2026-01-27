@@ -12,19 +12,6 @@ const { title, description, pubDate, updatedDate, heroImage, tags, readingTime }
 
 <Layout title={title} description={description} image={heroImage}>
 	<article class="py-8">
-		<!-- Hero Image -->
-		{heroImage && (
-			<div class="relative mb-8 -mx-4 sm:mx-0 overflow-hidden rounded-none sm:rounded-2xl">
-				<Image
-					src={heroImage}
-					alt={title}
-					width={1200}
-					height={600}
-					class="w-full aspect-video object-cover"
-				/>
-			</div>
-		)}
-
 		<!-- Article Header -->
 		<header class="mb-8 text-center">
 			<!-- Date & Reading Time -->
@@ -62,6 +49,19 @@ const { title, description, pubDate, updatedDate, heroImage, tags, readingTime }
 				</div>
 			)}
 		</header>
+
+		<!-- Hero Image -->
+		{heroImage && (
+			<div class="relative mb-8 -mx-4 sm:mx-0 overflow-hidden rounded-none sm:rounded-2xl">
+				<Image
+					src={heroImage}
+					alt={title}
+					width={1200}
+					height={600}
+					class="w-full aspect-video object-cover"
+				/>
+			</div>
+		)}
 
 		<hr class="border-gray-200 dark:border-gray-800 mb-8" />
 
