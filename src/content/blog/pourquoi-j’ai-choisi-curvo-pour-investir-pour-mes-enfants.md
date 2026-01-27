@@ -34,23 +34,11 @@ J’ai commencé avec 50 € par mois, versés automatiquement. C’est accessi
 
 ### Résultats observés (à 2 mois)
 
-* **Versements mensuels**
-
-   : 50 €
-* **Durée**
-
-   : 2 mois
-* **Montant total versé**
-
-   : 250 €
-* **Valeur du portefeuille (au 27/01/2026)**
-
-   : 253,60 € (soit +1,4 % de rendement brut)
-* **Projection à 18 ans**
-
-   (avec 50 €/mois et 5 % de rendement annuel moyen) : 
-
-  **~14 000 €**
+* **Versements mensuels**: 50 €
+* **Durée**: 2 mois
+* **Montant total versé**: 250 €
+* **Valeur du portefeuille (au 27/01/2026)**: 253,60 € (soit +1,4 % de rendement brut)
+* **Projection à 18 ans** (avec 50 €/mois et 5 % de rendement annuel moyen) : **~14 000 €**
 
 > *Note : les performances passées ne garantissent pas les futures. Les rendements varient selon les marchés. Ceci n'est pas un conseil en investissement. Investir comporte des risques de partie totale ou partielles en capital.*
 
@@ -64,21 +52,11 @@ Si mes objectifs changent (ex. : achat d’une maison, changement de profil de r
 
 ### En résumé : ce que j’ai apprécié
 
-* **Simplicité**
-
-   : création du compte en 10 min avec ITSME
-* **Automatisation**
-
-   : versements mensuels, rééquilibrage automatique
-* **Transparence**
-
-   : frais clairs, projections réalistes
-* **Flexibilité**
-
-   : portefeuilles multiples, adaptation aux objectifs de vie
-* **Accessibilité**
-
-   : démarrage dès 50 €/mois
+* **Simplicité**: création du compte en 10 min avec ITSME
+* **Automatisation**: versements mensuels, rééquilibrage automatique
+* **Transparence**: frais clairs, projections réalistes
+* **Flexibilité**: portefeuilles multiples, adaptation aux objectifs de vie
+* **Accessibilité**: démarrage dès 50 €/mois
 
 ### Ce que je retiens pour l'instant
 
