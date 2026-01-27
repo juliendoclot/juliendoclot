@@ -3,10 +3,11 @@ import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import Layout from './Layout.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import { formatReadingTime } from '../utils/readingTime';
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<'blog'>['data'] & { readingTime?: number };
 
-const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, tags, readingTime } = Astro.props;
 ---
 
 <Layout title={title} description={description} image={heroImage}>
@@ -26,9 +27,15 @@ const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.prop
 
 		<!-- Article Header -->
 		<header class="mb-8 text-center">
-			<!-- Date -->
+			<!-- Date & Reading Time -->
 			<div class="flex items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-4">
 				<FormattedDate date={pubDate} />
+				{readingTime && (
+					<>
+						<span>•</span>
+						<span>{formatReadingTime(readingTime)}</span>
+					</>
+				)}
 				{updatedDate && (
 					<>
 						<span>•</span>
