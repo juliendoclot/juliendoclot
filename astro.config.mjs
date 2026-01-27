@@ -10,7 +10,7 @@ import decapCmsOauth from 'astro-decap-cms-oauth';
 // https://astro.build/config
 export default defineConfig({
   // Replace with your actual domain when deploying
-  site: 'https://juliendoclot.pages.dev',
+  site: 'https://www.juliendoclot.com',
 
   integrations: [
     mdx(),
