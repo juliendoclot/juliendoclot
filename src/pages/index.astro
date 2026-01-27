@@ -62,21 +62,14 @@ const categories = [...new Set(allPosts.flatMap((post) => post.data.tags))];
 
 	<!-- Latest Articles Section -->
 	<section class="py-4">
-		<h2 class="text-3xl md:text-4xl font-bold mb-10 text-gray-900 dark:text-white">
-			Derniers Articles
-		</h2>
+		<!-- Title + Search -->
+		<div class="flex flex-wrap items-center justify-between gap-4 mb-10">
+			<h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+				Derniers Articles
+			</h2>
 
-		<!-- Categories Filter + Search -->
-		<div class="flex flex-wrap items-center gap-3 mb-10">
-			<div id="categories-filter" class="flex flex-wrap items-center gap-3">
-				<span class="tag-pill active" data-tag="all">Tous</span>
-				{categories.map((category) => (
-					<span class="tag-pill" data-tag={category}>{category}</span>
-				))}
-			</div>
-
-			<!-- Search input (aligned with sidebar) -->
-			<div class="hidden xl:block ml-auto xl:w-64">
+			<!-- Search input -->
+			<div class="hidden xl:block xl:w-64">
 				<div class="relative">
 					<svg class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -88,6 +81,16 @@ const categories = [...new Set(allPosts.flatMap((post) => post.data.tags))];
 						class="w-full pl-11 pr-4 py-2.5 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-transparent text-sm text-gray-600 dark:text-gray-400 placeholder-gray-400 focus:outline-none focus:border-indigo-400 focus:ring-1 focus:ring-indigo-400 transition-all"
 					/>
 				</div>
+			</div>
+		</div>
+
+		<!-- Categories Filter -->
+		<div class="flex flex-wrap items-center gap-3 mb-10">
+			<div id="categories-filter" class="flex flex-wrap items-center gap-3">
+				<span class="tag-pill active" data-tag="all">Tous</span>
+				{categories.map((category) => (
+					<span class="tag-pill" data-tag={category}>{category}</span>
+				))}
 			</div>
 		</div>
 
