@@ -103,5 +103,3 @@ Est-ce que c'est pour tout le monde ? Non. Si tu veux juste écrire sans jamais 
 Mais si comme moi tu as envie d'apprendre, de bidouiller, de créer quelque chose de vraiment personnel... Fonce. Avec les outils d'IA comme Claude, tu n'as plus besoin d'être développeur pour te lancer. Tu expliques ce que tu veux, tu testes, tu apprends. C'est du vibe coding, et c'est addictif.
 
 Et si tu as des questions sur la migration ou sur Astro en général, n'hésite pas à me contacter. Je serai content d'en discuter.
-
-Code Block 123456
