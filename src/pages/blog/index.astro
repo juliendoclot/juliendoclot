@@ -19,19 +19,21 @@ const allTags = [...new Set(posts.flatMap((post) => post.data.tags))];
 		<!-- Tags Filter -->
 		{allTags.length > 0 && (
 			<section class="mb-8">
-				<div class="flex flex-wrap gap-3">
-					<span class="tag-pill active">Tous</span>
+				<div id="tags-filter" class="flex flex-wrap gap-3">
+					<span class="tag-pill active" data-tag="all">Tous</span>
 					{allTags.map((tag) => (
-						<span class="tag-pill">{tag}</span>
+						<span class="tag-pill" data-tag={tag}>{tag}</span>
 					))}
 				</div>
 			</section>
 		)}
 
 		<!-- Posts Grid -->
-		<section class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+		<section id="posts-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 			{posts.map((post) => (
-				<BlogCard post={post} />
+				<div class="post-item" data-tags={JSON.stringify(post.data.tags || [])}>
+					<BlogCard post={post} />
+				</div>
 			))}
 		</section>
 
@@ -45,3 +47,29 @@ const allTags = [...new Set(posts.flatMap((post) => post.data.tags))];
 		)}
 	</div>
 </Layout>
+
+<script>
+	const tagsFilter = document.getElementById('tags-filter');
+	const postItems = document.querySelectorAll('.post-item');
+
+	tagsFilter?.addEventListener('click', (e) => {
+		const target = e.target as HTMLElement;
+		if (!target.classList.contains('tag-pill')) return;
+
+		// Update active state
+		tagsFilter.querySelectorAll('.tag-pill').forEach(pill => pill.classList.remove('active'));
+		target.classList.add('active');
+
+		const selectedTag = target.dataset.tag;
+
+		// Filter posts
+		postItems.forEach(item => {
+			const postTags = JSON.parse((item as HTMLElement).dataset.tags || '[]');
+			if (selectedTag === 'all' || postTags.includes(selectedTag)) {
+				(item as HTMLElement).style.display = '';
+			} else {
+				(item as HTMLElement).style.display = 'none';
+			}
+		});
+	});
+</script>
