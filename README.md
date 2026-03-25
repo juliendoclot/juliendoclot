@@ -42,7 +42,7 @@
 **En cours**
 
 - **Blog WordPress** — Thème custom · Sécurisation complète · Optimisation performances
-- **Self-hosting infra** — Stack complète sur Hetzner · Docker, Proxmox, Cloudflare Tunnel
+- **Self-hosting infra** — Stack complète sur Hetzner · Docker, Proxmox, Tailscale
 
 ---
 
